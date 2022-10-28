@@ -1,5 +1,7 @@
 package com.example.springbootmaven.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/test-rest")
 public class TestRestController {
+    @Autowired
+    ApplicationContext applicationContext;
     private final TestService testService;
 
     public TestRestController(TestService testService) {

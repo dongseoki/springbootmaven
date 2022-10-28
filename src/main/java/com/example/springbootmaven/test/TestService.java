@@ -5,6 +5,8 @@ import com.jam2in.arcus.app.common.aop.ArcusCacheKey;
 import com.jam2in.arcus.app.common.aop.ArcusCacheKeyParameter;
 import com.jam2in.arcus.app.common.key.ArcusCacheKeyDate;
 import com.jam2in.arcus.app.common.recaching.ArcusRecachingType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -15,11 +17,20 @@ import java.util.Map;
 
 @Service
 public class TestService {
+    @Autowired
+    ApplicationContext applicationContext;
     private final Map<String, String> testDataMap = new HashMap<>();
     private final Map<String, User> testUserMap = new HashMap<>();
 
     @PostConstruct
     public void postMethod(){
+//        System.out.println("hello");
+//
+//        String[] beans = applicationContext.getBeanDefinitionNames();
+//
+//        for (String bean : beans) {
+//            System.out.println("bean : " + bean);
+//        }
         for (int i = 1; i < 15; i++) {
             testUserMap.put(Long.toString(i),new User(i,"u"+i));
         }
