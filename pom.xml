@@ -76,7 +76,8 @@
 			<artifactId>arcus-app-common</artifactId>
 			<scope>system</scope>
 			<version>2.0.0</version>
-			<systemPath>${basedir}/src/libs/arcus-app-common-2.0.0.jar</systemPath>
+<!--			<systemPath>${basedir}/src/libs/arcus-app-common-2.0.0.jar</systemPath>-->
+			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -188,12 +189,12 @@
 			<version>${log4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>provided</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.slf4j</groupId>-->
+<!--			<artifactId>slf4j-log4j12</artifactId>-->
+<!--			<version>${slf4j.version}</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework</groupId>-->
 <!--			<artifactId>spring-jdbc</artifactId>-->
@@ -257,13 +258,13 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.9.9</version>
+			<version>2.11.4</version>
 		</dependency>
 <!--		출처: https://rh-cp.tistory.com/95 [청정코딩샘물:티스토리]-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.9</version>
+			<version>2.11.4</version>
 		</dependency>
 <!--		add end-->
 	</dependencies>
