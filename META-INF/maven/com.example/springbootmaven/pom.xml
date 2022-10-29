@@ -77,7 +77,7 @@
 			<artifactId>arcus-app-common</artifactId>
 			<scope>system</scope>
 			<version>2.0.0</version>
-			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>
+			<systemPath>${basedir}/src/libs/arcus-app-common-2.0.0.jar</systemPath>
 <!--			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>-->
 			<exclusions>
 				<exclusion>
@@ -262,6 +262,11 @@
 			<version>2.11.4</version>
 		</dependency>
 <!--		출처: https://rh-cp.tistory.com/95 [청정코딩샘물:티스토리]-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.4</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 
 		<!--		add end-->
