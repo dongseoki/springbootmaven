@@ -52,6 +52,7 @@ public class TestRestController {
                                            @RequestParam(value = "id", required = false) Integer id,
                                            @RequestParam(value="name", required = false)String name,
                                            @RequestParam(value="data", required = false)String data){
+        String result = "end";
         switch (caseType){
             case "1":
                 testService.getCase1(id);
@@ -69,13 +70,16 @@ public class TestRestController {
                 tempMap.put("name",name);
                 testService.getCase10(tempMap);
                 break;
+            case "97":
+                result = "int value : "+ testService.getInteger(id);
+                break;
             case "98":
-                testService.getString(id);
+                result = testService.getString(id);
                 break;
             case "99":
                 testService2.getCaseStrange(id);
                 break;
         }
-        return "end";
+        return result;
     }
 }

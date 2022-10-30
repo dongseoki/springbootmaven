@@ -20,5 +20,12 @@
   {
     "target": "com.example.springbootmaven.TestService2.getCaseStrange",
     "keyParams": ["*"]
-  }
+  },
+  {
+    "target": "com.example.springbootmaven.test.TestService.getString",
+    "keyParams": ["*"]
+  },  {
+  "target": "com.example.springbootmaven.test.TestService.getInteger",
+  "keyParams": ["*"]
+}
 ]

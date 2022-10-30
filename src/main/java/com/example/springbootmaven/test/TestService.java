@@ -24,6 +24,8 @@ public class TestService {
 
     private final Map<String, String> strToStrMap = new HashMap<>();
 
+    private final Map<Integer, Integer> intTointMap = new HashMap<>();
+
     @PostConstruct
     public void postMethod(){
 //        System.out.println("hello");
@@ -45,7 +47,11 @@ public class TestService {
         for (int i = 1; i < 15; i++) {
             strToStrMap.put(Long.toString(i),Long.toString(i) + "data");
         }
+        for (int i = 1; i < 15; i++) {
+            intTointMap.put(i,i);
+        }
     }
+
 
     public String getTestData(String testKey){
         return testDataMap.get(testKey);
@@ -60,6 +66,11 @@ public class TestService {
 
     public String getString(long id){
         return strToStrMap.get(""+id);
+    }
+
+    public int getInteger(long id){
+        Long value = id;
+        return intTointMap.get(value.intValue());
     }
 
     // guide 시작.
