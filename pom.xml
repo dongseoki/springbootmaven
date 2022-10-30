@@ -29,7 +29,7 @@
 <!--		<mockito.version>1.9.5</mockito.version>-->
 		<apache.commons.version>3.0</apache.commons.version>
 <!--		<mybatis-spring.version>1.3.2</mybatis-spring.version>-->
-		<jackson.version>2.6.7.1</jackson.version>
+		<jackson.version>2.11.4</jackson.version>
 		<h2.version>1.4.191</h2.version>
 		<javax.annotation.version>1.3.1</javax.annotation.version>
 		<curator.version>4.2.0</curator.version>
@@ -73,7 +73,6 @@
 <!--		arcus commmon app start-->
 		<dependency>
 			<groupId>com.jam2in.arcus</groupId>
-<!--			<groupId>arcus-app-common</groupId>-->
 			<artifactId>arcus-app-common</artifactId>
 			<scope>system</scope>
 			<version>2.0.0</version>

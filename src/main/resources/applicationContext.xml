@@ -3,74 +3,34 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd
 http://www.springframework.org/schema/aop
-http://www.springframework.org/schema/aop/spring-aop.xsd">
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/task
+http://www.springframework.org/schema/task/spring-task.xsd">
 
 
     <!-- Arcus 프로퍼티 로딩. -->
     <context:property-placeholder location="classpath:arcus.properties"/>
 
-
-
     <bean id="arcusConfiguration" class="com.jam2in.arcus.app.common.config.ArcusConfiguration"/>
 
-    <!--    <bean id="arcusJsonAspect" class="org.jam2in.arcus.commontest.ArcusJsonAspect">-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusConfiguration"/>-->
-    <!--        </constructor-arg>-->
-    <!--    </bean>-->
-
-    <!--    <aop:config proxy-target-class="true">-->
-    <!--        <aop:aspect id="arcusJsonAspect" ref="arcusJsonAspect" >-->
-    <!--            <aop:pointcut id="pointcut" expression="execution(!void org.jam2in.arcus.commontest.*Service.get*(..))))" />-->
-    <!--            <aop:around method="around" pointcut-ref="pointcut"/>-->
-    <!--        </aop:aspect>-->
-    <!--    </aop:config>-->
-
-    <bean id="arcusAnnotationAspect" class="com.example.springbootmaven.config.aspect.ArcusAnnotationAspect">
-        <constructor-arg ref="arcusConfiguration"/>
+    <bean id="arcusJsonAspect" class="com.example.springbootmaven.config.aspect.ArcusJsonAspect">
+        <constructor-arg>
+            <ref bean="arcusConfiguration"/>
+        </constructor-arg>
     </bean>
 
     <aop:config proxy-target-class="true">
-        <aop:aspect id="arcusAnnotationAspect" ref="arcusAnnotationAspect" >
-            <aop:pointcut id="pointcut" expression="(@annotation(com.jam2in.arcus.app.common.aop.ArcusCache) &amp;&amp; execution(* *(..)))" />
+        <aop:aspect id="arcusJsonAspect" ref="arcusJsonAspect" >
+            <aop:pointcut id="pointcut" expression="(execution(!void com.example.springbootmaven.*.*Service.get*(..))
+                                                    || execution(!void com.example.springbootmaven.TestService2.getCaseStrange(*)))" />
             <aop:around method="around" pointcut-ref="pointcut"/>
         </aop:aspect>
     </aop:config>
-
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
-
-    <!--    <bean id="arcusPropertyUpdateScheduler" class="com.jam2in.arcus.app.common.property.ArcusPropertyUpdateScheduler">-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusPropertyUpdater"/>-->
-    <!--        </constructor-arg>-->
-    <!--    </bean>-->
-
-
-    <!--    <bean id="arcusPropertyUpdater" class="com.jam2in.arcus.app.common.property.ArcusPropertyUpdater">-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusPropertyJsonFetcher"/>-->
-    <!--        </constructor-arg>-->
-    <!--    </bean>-->
-
-    <!--    <bean id="arcusCacheItemUpdateScheduler" class="com.jam2in.arcus.app.common.item.ArcusCacheItemUpdateScheduler">-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusCacheItemUpdater"/>-->
-    <!--        </constructor-arg>-->
-    <!--    </bean>-->
-
-
-    <!--    <bean id="arcusCacheItemUpdater" class="com.jam2in.arcus.app.common.item.ArcusCacheItemUpdater">-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusCacheItemManager"/>-->
-    <!--        </constructor-arg>-->
-    <!--        <constructor-arg>-->
-    <!--            <ref bean="arcusCacheItemJsonFetcher"/>-->
-    <!--        </constructor-arg>-->
-    <!--    </bean>-->
 
 </beans>

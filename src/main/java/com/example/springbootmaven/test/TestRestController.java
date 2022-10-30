@@ -1,5 +1,6 @@
 package com.example.springbootmaven.test;
 
+import com.example.springbootmaven.TestService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.ui.Model;
@@ -15,9 +16,11 @@ public class TestRestController {
     @Autowired
     ApplicationContext applicationContext;
     private final TestService testService;
+    private final TestService2 testService2;
 
-    public TestRestController(TestService testService) {
+    public TestRestController(TestService testService, TestService2 testService2) {
         this.testService = testService;
+        this.testService2 = testService2;
     }
 
     @GetMapping("/hello")
@@ -51,7 +54,7 @@ public class TestRestController {
                                            @RequestParam(value="data", required = false)String data){
         switch (caseType){
             case "1":
-//                testService.getCase1();
+                testService.getCase1(id);
                 break;
             case "5":
                 testService.getCase5(new User(id, name), id);
@@ -65,6 +68,12 @@ public class TestRestController {
                 tempMap.put("id",id);
                 tempMap.put("name",name);
                 testService.getCase10(tempMap);
+                break;
+            case "98":
+                testService.getString(id);
+                break;
+            case "99":
+                testService2.getCaseStrange(id);
                 break;
         }
         return "end";

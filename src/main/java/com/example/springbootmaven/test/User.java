@@ -1,6 +1,7 @@
 package com.example.springbootmaven.test;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -8,11 +9,11 @@ public class User implements Serializable {
     private int id;
     private String name;
     private String[] mobileNumberArray;
-    private List<String> mobileNumberList;
-    private User[] friendArray;
-    private List<User> friendList;
-    private User friend;
-    private Map<String, Object> friendMap;
+//    private List<String> mobileNumberList;
+//    private User[] friendArray;
+//    private List<User> friendList;
+//    private User friend;
+//    private Map<String, Object> friendMap;
 
     public User() {
     }
@@ -46,47 +47,61 @@ public class User implements Serializable {
         this.mobileNumberArray = mobileNumberArray;
     }
 
-    public List<String> getMobileNumberList() {
-        return mobileNumberList;
-    }
-
-    public void setMobileNumberList(List<String> mobileNumberList) {
-        this.mobileNumberList = mobileNumberList;
-    }
-
-    public User[] getFriendArray() {
-        return friendArray;
-    }
-
-    public void setFriendArray(User[] friendArray) {
-        this.friendArray = friendArray;
-    }
-
-    public List<User> getFriendList() {
-        return friendList;
-    }
-
-    public void setFriendList(List<User> friendList) {
-        this.friendList = friendList;
-    }
-
-    public User getFriend() {
-        return friend;
-    }
-
-    public void setFriend(User friend) {
-        this.friend = friend;
-    }
-
-    public Map<String, Object> getFriendMap() {
-        return friendMap;
-    }
-
-    public void setFriendMap(Map<String, Object> friendMap) {
-        this.friendMap = friendMap;
-    }
+//    public List<String> getMobileNumberList() {
+//        return mobileNumberList;
+//    }
+//
+//    public void setMobileNumberList(List<String> mobileNumberList) {
+//        this.mobileNumberList = mobileNumberList;
+//    }
+//
+//    public User[] getFriendArray() {
+//        return friendArray;
+//    }
+//
+//    public void setFriendArray(User[] friendArray) {
+//        this.friendArray = friendArray;
+//    }
+//
+//    public List<User> getFriendList() {
+//        return friendList;
+//    }
+//
+//    public void setFriendList(List<User> friendList) {
+//        this.friendList = friendList;
+//    }
+//
+//    public User getFriend() {
+//        return friend;
+//    }
+//
+//    public void setFriend(User friend) {
+//        this.friend = friend;
+//    }
+//
+//    public Map<String, Object> getFriendMap() {
+//        return friendMap;
+//    }
+//
+//    public void setFriendMap(Map<String, Object> friendMap) {
+//        this.friendMap = friendMap;
+//    }
 
     //...
-///* 내부 Field를 가지고 Arcus Key를 생성하기 위해선
-//반드시 모든 Field의 getter 메소드가 존재해야 함 */
+/* 내부 Field를 가지고 Arcus Key를 생성하기 위해선
+반드시 모든 Field의 getter 메소드가 존재해야 함 */
+
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", mobileNumberArray=" + Arrays.toString(mobileNumberArray) +
+//                ", mobileNumberList=" + mobileNumberList +
+//                ", friendArray=" + Arrays.toString(friendArray) +
+//                ", friendList=" + friendList +
+//                ", friend=" + friend +
+//                ", friendMap=" + friendMap +
+//                '}';
+//    }
 }
