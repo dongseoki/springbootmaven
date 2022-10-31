@@ -16,29 +16,16 @@
 	<description>Demo project for Spring Boot by Build Tool Maven</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<arcus-java-client.version>1.13.2</arcus-java-client.version>
-		<zookeeper.verison>3.5.9</zookeeper.verison>
-		<log4j.version>1.2.16</log4j.version>
-<!--		<slf4j.version>1.7.25</slf4j.version>-->
-		<org.aspectj.version>1.9.8</org.aspectj.version>
-		<cglib.version>2.2</cglib.version>
-<!--		<spring.version>4.0.9.RELEASE</spring.version>-->
-<!--		<mybatis.version>3.4.1</mybatis.version>-->
-<!--		<junit.version>4.12</junit.version>-->
-<!--		<hamcrest.version>1.3</hamcrest.version>-->
-<!--		<mockito.version>1.9.5</mockito.version>-->
-		<apache.commons.version>3.0</apache.commons.version>
-<!--		<mybatis-spring.version>1.3.2</mybatis-spring.version>-->
-		<jackson.version>2.11.4</jackson.version>
-		<h2.version>1.4.191</h2.version>
-		<javax.annotation.version>1.3.1</javax.annotation.version>
-		<curator.version>4.2.0</curator.version>
+		<lib.dir>/Users/dongseoklee/github/springbootmaven/lib</lib.dir>
 	</properties>
+	<repositories>
+		<repository>
+			<id>local-repository</id>
+			<name>local repository</name>
+			<url>file://${lib.dir}</url>
+		</repository>
+	</repositories>
 	<dependencies>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -52,12 +39,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -73,197 +54,10 @@
 <!--		arcus commmon app start-->
 		<dependency>
 			<groupId>com.jam2in.arcus</groupId>
-			<artifactId>arcus-app-common</artifactId>
-			<scope>system</scope>
+			<artifactId>arcusappcommon</artifactId>
 			<version>2.0.0</version>
-			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>
-<!--			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>-->
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 <!--		arcus commmon app end-->
-		<dependency>
-			<groupId>com.navercorp.arcus</groupId>
-			<artifactId>arcus-java-client</artifactId>
-			<version>${arcus-java-client.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.zookeeper</groupId>
-					<artifactId>zookeeper</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>${zookeeper.verison}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.slf4j</groupId>-->
-<!--			<artifactId>slf4j-api</artifactId>-->
-<!--			<version>${slf4j.version}</version>-->
-<!--		</dependency>-->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${apache.commons.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${org.aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework</groupId>-->
-<!--			<artifactId>spring-context</artifactId>-->
-<!--			<version>${spring.version}</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>javax.annotation-api</artifactId>
-			<version>${javax.annotation.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>${cglib.version}</version>
-			<scope>provided</scope>
-		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.mybatis</groupId>-->
-<!--			<artifactId>mybatis</artifactId>-->
-<!--			<version>${mybatis.version}</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.mybatis</groupId>-->
-<!--			<artifactId>mybatis-spring</artifactId>-->
-<!--			<version>${mybatis-spring.version}</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-			<scope>provided</scope>
-		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.slf4j</groupId>-->
-<!--			<artifactId>slf4j-log4j12</artifactId>-->
-<!--			<version>${slf4j.version}</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework</groupId>-->
-<!--			<artifactId>spring-jdbc</artifactId>-->
-<!--			<version>${spring.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>com.h2database</groupId>-->
-<!--			<artifactId>h2</artifactId>-->
-<!--			<version>${h2.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework</groupId>-->
-<!--			<artifactId>spring-test</artifactId>-->
-<!--			<version>${spring.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>junit</groupId>-->
-<!--			<artifactId>junit</artifactId>-->
-<!--			<version>${junit.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--			<exclusions>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.hamcrest</groupId>-->
-<!--					<artifactId>hamcrest-core</artifactId>-->
-<!--				</exclusion>-->
-<!--			</exclusions>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.hamcrest</groupId>-->
-<!--			<artifactId>hamcrest-library</artifactId>-->
-<!--			<version>${hamcrest.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.mockito</groupId>-->
-<!--			<artifactId>mockito-all</artifactId>-->
-<!--			<version>${mockito.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.curator</groupId>-->
-<!--			<artifactId>curator-framework</artifactId>-->
-<!--			<version>${curator.version}</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework</groupId>-->
-<!--			<artifactId>spring-web</artifactId>-->
-<!--			<version>${spring.version}</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.13</version>
-		</dependency>
-<!--		end-->
-<!--		add-->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.11.4</version>
-		</dependency>
-<!--		출처: https://rh-cp.tistory.com/95 [청정코딩샘물:티스토리]-->
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-
-		<!--		add end-->
 	</dependencies>
 
 	<build>

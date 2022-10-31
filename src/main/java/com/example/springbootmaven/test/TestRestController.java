@@ -51,8 +51,13 @@ public class TestRestController {
     public String arcusCommonModuleGetUser(@RequestParam(value = "caseType") String caseType,
                                            @RequestParam(value = "id", required = false) Integer id,
                                            @RequestParam(value="name", required = false)String name,
-                                           @RequestParam(value="data", required = false)String data){
+                                           @RequestParam(value="data", required = false)String data) throws InterruptedException {
         String result = "end";
+//        String[] names = applicationContext.getBeanDefinitionNames();
+//        for (String value :
+//                names) {
+//            System.out.println("value = " + value);
+//        }
         switch (caseType){
             case "1":
                 testService.getCase1(id);

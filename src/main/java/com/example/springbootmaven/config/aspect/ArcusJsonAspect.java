@@ -16,8 +16,6 @@ public class ArcusJsonAspect extends ArcusCacheJsonAspect {
     public ArcusJsonAspect(ArcusConfiguration configuration) {
         super(configuration);
     }
-
-    public void pointcut() {}
     public Object around(final ProceedingJoinPoint joinPoint) throws Throwable {
         return super.around(joinPoint);
     }
