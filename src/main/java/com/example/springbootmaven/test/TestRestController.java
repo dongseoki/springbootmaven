@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/test-rest")
@@ -46,6 +47,15 @@ public class TestRestController {
         testService.getCase1(id);
         return "end";
     }
+
+    @GetMapping("/arcus-common-module-test/poc")
+    public String poc(@RequestParam(value = "id", required = false) Integer id){
+        String result = "";
+        Random randomV = new Random();
+        result = ""+randomV.nextInt(100);
+        return result;
+    }
+
 
     @GetMapping("/arcus-common-module-test/get-user")
     public String arcusCommonModuleGetUser(@RequestParam(value = "caseType") String caseType,

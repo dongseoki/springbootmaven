@@ -86,7 +86,7 @@ public class TestService {
 
     // 5) APP:user.UserService.case5@ARG0=<id=1,name=arcus>,ARG1=<*=1>
     public User getCase5(User user, int userId) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(30);
         return testUserMap.get(user.getId()+" "+user.getName());
     }
 

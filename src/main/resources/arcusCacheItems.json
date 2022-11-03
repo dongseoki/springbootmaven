@@ -27,5 +27,8 @@
   },  {
   "target": "com.example.springbootmaven.test.TestService.getInteger",
   "keyParams": ["*"]
+},  {
+  "target": "com.example.springbootmaven.test.TestRestController.poc",
+  "keyParams": ["*"]
 }
 ]

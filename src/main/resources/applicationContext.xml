@@ -27,8 +27,9 @@
 
     <aop:config proxy-target-class="true">
         <aop:aspect id="arcusJsonAspect" ref="arcusJsonAspect" >
-            <aop:pointcut id="pointcut" expression="(execution(!void com.example.springbootmaven.*.*Service.get*(..))
-                                                    || execution(!void com.example.springbootmaven.TestService2.getCaseStrange(*)))" />
+            <aop:pointcut id="pointcut" expression="execution(!void com.example.springbootmaven.*.*Service.get*(..))
+                                                    || execution(!void com.example.springbootmaven.TestService2.getCaseStrange(*))
+                                                    || execution(!void com.example.springbootmaven.test.TestRestController.*(..)) "/>
             <aop:around method="around" pointcut-ref="pointcut"/>
         </aop:aspect>
     </aop:config>

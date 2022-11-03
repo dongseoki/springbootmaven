@@ -55,7 +55,10 @@
 		<dependency>
 			<groupId>com.jam2in.arcus</groupId>
 			<artifactId>arcusappcommon</artifactId>
-			<version>2.0.0</version>
+			<version>2.0.1</version>
+<!--			<scope>system</scope>-->
+<!--			<version>2.0.0</version>-->
+<!--			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>-->
 		</dependency>
 <!--		arcus commmon app end-->
 	</dependencies>
