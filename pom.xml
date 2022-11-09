@@ -73,6 +73,14 @@
 					<mainClass>com.example.springbootmaven.SpringbootmavenApplication</mainClass>
 				</configuration>
 			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+			<version>3.1.1</version>
+			<configuration>
+				<configLocation>sun_checks.xml</configLocation>
+			</configuration>
+		</plugin>
 		</plugins>
 	</build>
 

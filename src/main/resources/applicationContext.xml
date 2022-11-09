@@ -19,11 +19,15 @@
 
     <bean id="arcusConfiguration" class="com.jam2in.arcus.app.common.config.ArcusConfiguration"/>
 
+    <bean id="arcusCacheItemJsonFetcher" class="com.example.springbootmaven.config.fetcher.ArcusCacheItemJsonFetcherImpl" />
+
     <bean id="arcusJsonAspect" class="com.example.springbootmaven.config.aspect.ArcusJsonAspect">
         <constructor-arg>
             <ref bean="arcusConfiguration"/>
         </constructor-arg>
     </bean>
+
+    <task:scheduler id="scheduler" pool-size="2"/>
 
     <aop:config proxy-target-class="true">
         <aop:aspect id="arcusJsonAspect" ref="arcusJsonAspect" >
@@ -33,5 +37,20 @@
             <aop:around method="around" pointcut-ref="pointcut"/>
         </aop:aspect>
     </aop:config>
+
+    <bean id="arcusCacheItemUpdater" class="com.jam2in.arcus.app.common.item.ArcusCacheItemUpdater">
+        <constructor-arg>
+            <ref bean="arcusCacheItemManager"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="arcusCacheItemJsonFetcher"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="arcusCacheItemUpdateScheduler" class="com.jam2in.arcus.app.common.item.ArcusCacheItemUpdateScheduler">
+        <constructor-arg>
+            <ref bean="arcusCacheItemUpdater"/>
+        </constructor-arg>
+    </bean>
 
 </beans>

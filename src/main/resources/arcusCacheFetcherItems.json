@@ -1,0 +1,15 @@
+[
+  
+  {
+    "target": "com.example.springbootmaven.test.TestService.getCase1",
+    "keyParams": ["*"]
+},
+  {
+    "target": "com.example.springbootmaven.test.TestService.getCase5",
+  "keyParams": ["id,name", "*"]
+},
+  {
+    "target": "com.example.springbootmaven.test.TestService.getCase6",
+    "keyParams": ["*"]
+  }
+]
