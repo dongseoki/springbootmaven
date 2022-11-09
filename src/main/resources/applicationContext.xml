@@ -27,6 +27,7 @@
         </constructor-arg>
     </bean>
 
+    <task:annotation-driven scheduler="scheduler"/>
     <task:scheduler id="scheduler" pool-size="2"/>
 
     <aop:config proxy-target-class="true">
