@@ -79,6 +79,13 @@ public class TestRestController {
 //                names) {
 //            System.out.println("value = " + value);
 //        }
+//        applicationContext.getBean
+        String applicationContextApplicationName = applicationContext.getApplicationName();
+        System.out.println("applicationContextApplicationName = " + applicationContextApplicationName);
+        String applicationContextId = applicationContext.getId();
+        System.out.println("applicationContextId = " + applicationContextId);
+        String applicationContextDisplayName = applicationContext.getDisplayName();
+        System.out.println("applicationContextDisplayName = " + applicationContextDisplayName);
         switch (caseType){
             case "1":
                 testService.getCase1(id);
