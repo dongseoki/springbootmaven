@@ -8,6 +8,11 @@
     "target": "com.example.springbootmaven.test.TestService.getCase5",
   "keyParams": ["id,name", "*"]
 },
+  {
+    "target": "com.example.springbootmaven.test.TestService.getUser",
+    "keyParams": ["*"],
+    "expireTime": 99999
+},
   
   {
     "target": "com.example.springbootmaven.test.TestService.getCase6",

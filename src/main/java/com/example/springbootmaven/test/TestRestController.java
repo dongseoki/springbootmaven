@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/test-rest")
@@ -18,6 +19,8 @@ public class TestRestController {
     ApplicationContext applicationContext;
     private final TestService testService;
     private final TestService2 testService2;
+    private final int min = 1;
+    private final int max = 9999;
 
     public TestRestController(TestService testService, TestService2 testService2) {
         this.testService = testService;
@@ -56,6 +59,12 @@ public class TestRestController {
         return result;
     }
 
+
+    @GetMapping("/arcus-common-module-test/random-user")
+    public String arcusCommonModuleGetRandomUser(){
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+        return testService.getUser(randomNum).toString();
+    }
 
     @GetMapping("/arcus-common-module-test/get-user")
     public String arcusCommonModuleGetUser(@RequestParam(value = "caseType") String caseType,

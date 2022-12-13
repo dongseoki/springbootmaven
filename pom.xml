@@ -54,11 +54,11 @@
 <!--		arcus commmon app start-->
 		<dependency>
 			<groupId>com.jam2in.arcus</groupId>
-			<artifactId>arcusappcommon</artifactId>
+			<artifactId>arcus-app-common</artifactId>
+<!--			<version>2.0.1</version>-->
+			<scope>system</scope>
 			<version>2.0.1</version>
-<!--			<scope>system</scope>-->
-<!--			<version>2.0.0</version>-->
-<!--			<systemPath>/Users/dongseoklee/Github/arcus-app-common/target/arcus-app-common-2.0.0.jar</systemPath>-->
+			<systemPath>/Users/dongseoklee/Github/DongseokiFork/arcus-app-common/target/arcus-app-common-2.0.1-jar-with-dependencies.jar</systemPath>
 		</dependency>
 <!--		arcus commmon app end-->
 	</dependencies>

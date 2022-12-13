@@ -107,4 +107,7 @@ public class TestService {
         return testUserMap.get(""+user.get("id").toString() + " "+user.get("name").toString());
     }
 
+    public User getUser(int id) {
+        return new User(id, "U"+id);
+    }
 }
